@@ -24,3 +24,6 @@ pub fn linear_search(arr: Vec<i32>, key: i32) -> bool {
     }
     return false;
 }
+
+
+

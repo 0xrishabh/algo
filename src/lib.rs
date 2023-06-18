@@ -1,5 +1,8 @@
 mod search;
+mod strings;
+
 #[cfg(test)]
+//use log::{info, warn}
 mod tests {
     use super::*;
 
@@ -30,5 +33,12 @@ mod tests {
         let key = 20;
         let success = search::binary_search(arr, key);
         assert_eq!(success, false);
+    }
+    #[test]
+    fn rabin_karp_true() {
+        let pattern = String::from("is");
+        let text = String::from("rishabh shukla is the best coder in the world");
+        let success = strings::rabin_karp(pattern, text);
+        assert_eq!(success, true);
     }
 }
