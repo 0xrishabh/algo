@@ -16,11 +16,11 @@ pub fn rabin_karp(pattern: String, text: String) -> bool {
     let mut text_hash: Vec<i64> = vec![0; T+1];
     let mut pattern_hash: i64 = 0;
     for i in 0..T{
-        let Some(ch) = text.chars().nth(i) else { panic!("Pattern is empty") };
+        let Some(ch) = text.chars().nth(i) else { panic!("index not found") };
         text_hash[i+1] = (text_hash[i] + (ch as i64 - 'a' as i64 + 1)*pow[i]) % MOD;
     }
     for i in 0..S{
-        let Some(ch) = pattern.chars().nth(i) else { panic!("Pattern is empty") };
+        let Some(ch) = pattern.chars().nth(i) else { panic!("index not found") };
         pattern_hash = (pattern_hash + (ch as i64 - 'a' as i64 + 1)*pow[i]) % MOD;
     }
     let mut i = 0;
